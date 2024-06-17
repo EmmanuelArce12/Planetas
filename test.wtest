@@ -1,0 +1,83 @@
+import habitantes.*
+import Planetas.* 
+
+
+
+describe "Julieta, una persona genérica de 42 años."{
+	const julieta = new Persona(edad=42)
+	test"potencia de 20"{
+	assert.equals(20,julieta.potencia())
+	}
+	test"inteligencia de 8"{
+	assert.equals(8,julieta.inteligencia())
+	}
+	test "no es destacado"{
+	assert.notThat(julieta.esDestacado())
+	}
+	
+}
+describe "Ana, una atleta de 25 años "{
+	const ana = new Atleta(edad=25)
+	test" potencia de 28"{
+	assert.equals(28,ana.potencia())
+	
+	}
+	test "inteligencia de 12"{
+	assert.equals(12,ana.inteligencia())
+	}
+	test "es destacado"{
+	assert.that(ana.esDestacado())
+	}
+}
+describe "Rosa, una atleta de 45 años que conoce 8 técnicas."{
+	const rosa = new Atleta(edad=45,cantDeTecnicas= 8)
+	test "potencia de 52"{
+	assert.equals(52,rosa.potencia())
+	}
+	test "inteligencia 8"{
+	assert.equals(8,rosa.inteligencia())
+	}
+	test "es destacada"{
+	assert.that(rosa.esDestacado())
+	}
+}
+describe "Perla, una atleta de 28 años que conoce 4 técnicas, y de masa muscular 6."{
+	const perla = new Atleta(edad=28,cantDeTecnicas=4,masaMuscular=6)
+	test"potencia de 44"{
+	assert.equals(44,perla.potencia())
+	}
+	test"inteligencia 12"{
+	assert.equals(12,perla.inteligencia())
+	}
+	test "no es destacado"{
+	assert.notThat(perla.esDestacado())
+	}
+	
+}
+describe "Mónica, una docente de 45 años que dio 6 cursos."{
+	const monica = new Docente(edad=45,cantDeCursos=6)
+	test "potencia 20"{
+	assert.equals(20,monica.potencia())
+	}
+	test "inteligencia 20"{
+	assert.equals(20,monica.inteligencia())
+		
+	}
+	test "es destacado"{
+	assert.that(monica.esDestacado())
+	}
+}
+describe "Luisa, una docente de 35 años que dio un curso"{
+	const luisa = new Docente(edad=35,cantDeCursos=1)
+	test"potencia de 20"{
+	assert.equals(20,luisa.potencia())
+	}
+	test "inteligencia 14"{
+	assert.equals(14,luisa.inteligencia())
+	}
+	test "no es destacado"{
+	assert.notThat(luisa.esDestacado())
+	}
+}
+
+
