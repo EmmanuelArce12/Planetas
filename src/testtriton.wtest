@@ -1,0 +1,43 @@
+import Planetas.*
+import habitantes.* 
+
+
+describe " planeta triton y 6 habitantes"{
+		const julieta = new Persona(edad=42)
+		const ana = new Atleta(edad=25)
+		const rosa = new Atleta(edad=45,cantDeTecnicas= 8)
+		const perla = new Atleta(edad=28,cantDeTecnicas=4,masaMuscular=6)
+		const monica = new Docente(edad=45,cantDeCursos=6)
+		const luisa = new Docente(edad=35,cantDeCursos=1)	
+		const triton = new Planeta(cantDeMuseos=2)
+		method initialize(){
+			triton.agregarHabitantes(#{julieta,ana,rosa,perla,monica,luisa})
+		}
+	
+	test "delegacion diplomatica esta formada por Ana,Rosa y Monica"{
+		assert.equals(#{ana,rosa,monica},triton.delegacionDiplomatica())
+	}
+	test "no es planeta culto"{
+		assert.notThat(triton.esCulto())
+	}
+	test "potencia real es de 184"{
+		assert.equals(184,triton.potenciaReal())
+	}
+}
+describe "perla entrena 15 dias y aprende una tecnica"{
+	const perla = new Atleta(edad=28,cantDeTecnicas=4,masaMuscular=6)
+	method initialize(){
+		perla.entrenar(15)
+		perla.aprenderUnaTecnica()
+	}
+	test "potencia es de 65"{
+		assert.equals(65,perla.potencia())
+	}
+	test"no es destacada aun "{
+		assert.notThat(perla.esDestacado())
+	}
+	test "es destacado"{
+		perla.aprenderUnaTecnica()
+	assert.that(perla.esDestacado())
+	}
+}
