@@ -31,7 +31,7 @@ class Soldado inherits Persona{
 	const armas =#{}
 	method edad()= edad
 	method agregarArma(arma)= armas.add(arma)
-	override method potencia()= super() + armas.potencia(self)
+	override method potencia()= super() + armas.potencia(self) // self porque es el soldado..
 	override method ofrecerTributo(planeta){planeta.construirMurallas(5)}
 }
 object pistolete{
